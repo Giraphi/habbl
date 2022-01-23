@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "./static/js/main.dadf0ce9.js",
-    "index.html": "./index.html",
-    "main.dadf0ce9.js.map": "./static/js/main.dadf0ce9.js.map"
+    "main.js": "/habbl/static/js/main.64bb3888.js",
+    "index.html": "/habbl/index.html",
+    "main.64bb3888.js.map": "/habbl/static/js/main.64bb3888.js.map"
   },
   "entrypoints": [
-    "static/js/main.dadf0ce9.js"
+    "static/js/main.64bb3888.js"
   ]
 }
