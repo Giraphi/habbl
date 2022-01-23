@@ -1,18 +1,30 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import styled from "styled-components";
+import {gql, useQuery} from "@apollo/client";
 
-const StyledRoot = styled.div``
+const StyledRoot = styled.div`
+    font-size: 50px;
+`
+
+const mainPageContentsQuery = gql`
+    {
+        mainPageContents {
+            introduction,
+            image {
+                url
+            }
+        }
+    }
+`;
+
 
 function App() {
-    const [ctr, setCtr] = useState(0);
-
-    useEffect(() => {
-        console.log(ctr);
-    }, []);
+    const { loading, error, data } = useQuery(mainPageContentsQuery);
 
     return (
         <StyledRoot>
-            Hello
+            {data && data.mainPageContents[0].introduction}
+            <img src={data && data.mainPageContents[0].image.url} alt={""}/>
         </StyledRoot>
     );
 }
