@@ -20,15 +20,9 @@ module.exports = {
         "jsx-a11y/anchor-is-valid": "off", // This rule is not compatible with how Next.js's <Link />
         "jsx-a11y/click-events-have-key-events": "off",
         "jsx-a11y/no-static-element-interactions": "off",
-        // I suggest this setting for requiring return types on functions only where usefull
-        // '@typescript-eslint/explicit-function-return-type': [
-        //     'warn', {
-        //         allowExpressions: true,
-        //         allowConciseArrowFunctionExpressionsStartingWithVoid: true
-        //     }
-        // ],
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/no-namespace": "off",
+        "@typescript-eslint/no-explicit-any": "off",
     },
 };
