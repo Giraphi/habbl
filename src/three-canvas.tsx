@@ -18,7 +18,7 @@ const StyledCanvas = styled(Canvas)`
 export default function ThreeCanvas() {
     return (
         <StyledRoot>
-            <StyledCanvas camera={{ position: [0, 0, 17], far: 500 }}>
+            <StyledCanvas camera={{ position: [0, 0, 20], far: 500 }}>
                 <ambientLight />
                 <spotLight
                     intensity={2}
@@ -28,6 +28,7 @@ export default function ThreeCanvas() {
                     shadow-mapSize-width={2048}
                     shadow-mapSize-height={2048}
                     castShadow={true}
+                    color={"deeppink"}
                 />
 
                 <Suspense fallback={null}>
