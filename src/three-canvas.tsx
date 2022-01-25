@@ -4,6 +4,7 @@ import { Canvas } from "@react-three/fiber";
 // import { StandardEffects } from "@react-three/drei";
 import Model from "./model";
 import styled from "styled-components";
+import FlyingPageObjects from "./flying-page-objects";
 
 const StyledRoot = styled.div`
     height: 55vh;
@@ -14,6 +15,8 @@ const StyledCanvas = styled(Canvas)`
         outline: none;
     }
 `
+
+// #ffc7f1
 
 export default function ThreeCanvas() {
     return (
@@ -35,11 +38,20 @@ export default function ThreeCanvas() {
                     <Model/>
                     {/*<StandardEffects />*/}
                 </Suspense>
-                <gridHelper args={[1000,400, `white`, `gray`]} position={[0,-15,0]}/>
+                <gridHelper args={[1000,400, `white`, `white`]} position={[0,-15,0]}/>
                 <mesh rotation={[- Math.PI / 2, 0,0]} position={[0,-15.5,0]}>
-                    <meshPhongMaterial/>
+                    <meshPhongMaterial color={"#ffc7f1"}/>
                     <planeGeometry args={[1000,1000]} />
                 </mesh>
+
+                <group position={[0, 0, 0]}>
+                    <FlyingPageObjects numObjects={50} minDistance={20} maxDistance={40} height={20}>
+                        <meshStandardMaterial attach="material" color="red" />
+                        {/*heart geometry*/}
+                        {/*https://threejs.org/docs/#api/en/extras/core/Shape*/}
+                        <boxBufferGeometry args={[1, 1, 1]} />
+                    </FlyingPageObjects>
+                </group>
             </StyledCanvas>
             {/*<Controls />*/}
         </StyledRoot>
